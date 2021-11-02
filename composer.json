@@ -1,0 +1,36 @@
+{
+    "name": "gauravjain028/omnipay-ameria",
+    "type": "library",
+    "description": "Ameria gateway for Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "arca",
+        "ameria",
+        "purchase"
+    ],
+    "homepage": "https://github.com/gauravjain028/omnipay-ameria",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gaurav Jain",
+            "email": "gaurav.jain028@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Ameria\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/common": "^3",
+        "ext-json": "*",
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3"
+    }
+}
