@@ -40,6 +40,7 @@ Or you can simply run
 ```php
 
     $gateway = Omnipay::create('Ameria');
+    $gateway->setClientId(env('AMERIA_CLIENT_ID'));
     $gateway->setUsername(env('AMERIA_USERNAME'));
     $gateway->setPassword(env('AMERIA_PASSWORD'));
     $gateway->setReturnUrl(env('AMERIA_RETURN_URL')); // Return url, that should be point to your ameria webhook route
