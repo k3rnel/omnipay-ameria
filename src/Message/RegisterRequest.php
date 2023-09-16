@@ -5,18 +5,17 @@ namespace Omnipay\Ameria\Message;
 
 /**
  * Class RegisterRequest
+ *
  * @package Omnipay\Ameria\Message
  */
 class RegisterRequest extends AbstractRequest
 {
-    const PAYMENT_TYPE_ARCA = 5;
-    const PAYMENT_TYPE_PAYPAL = 7;
     const PAYMENT_TYPE_BINDING = 6;
 
     /**
      * Prepare data to send
      *
-     * @return array|mixed
+     * @return array
      * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData(): array
@@ -59,8 +58,8 @@ class RegisterRequest extends AbstractRequest
     /**
      * @return string
      */
-    public function getEndpoint()
+    public function getEndpoint(): string
     {
-        return $this->getUrl() . ($this->getBindingPurchase() ? '/MakeBindingPayment' : '/InitPayment');
+        return $this->getUrl().($this->getBindingPurchase() ? '/MakeBindingPayment' : '/InitPayment');
     }
 }

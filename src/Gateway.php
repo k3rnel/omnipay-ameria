@@ -12,7 +12,6 @@ use Omnipay\Common\Message\RequestInterface;
  * @method RequestInterface authorize(array $options = array())
  * @method RequestInterface completeAuthorize(array $options = array())
  * @method RequestInterface capture(array $options = array())
- * @method RequestInterface completePurchase(array $options = array())
  * @method RequestInterface void(array $options = array())
  * @method RequestInterface createCard(array $options = array())
  * @method RequestInterface updateCard(array $options = array())
@@ -59,6 +58,7 @@ class Gateway extends AbstractGateway
      * Set account client id.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setClientId($value): Gateway
@@ -80,6 +80,7 @@ class Gateway extends AbstractGateway
      * Set account login.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setUsername($value): Gateway
@@ -101,6 +102,7 @@ class Gateway extends AbstractGateway
      * Set account password.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setPassword($value): Gateway
@@ -112,9 +114,10 @@ class Gateway extends AbstractGateway
      * Create Purchase Request.
      *
      * @param array $options
+     *
      * @return \Omnipay\Common\Message\AbstractRequest
      */
-    public function purchase(array $options = array()): \Omnipay\Common\Message\AbstractRequest
+    public function purchase(array $options = []): \Omnipay\Common\Message\AbstractRequest
     {
         return $this->createRequest('\Omnipay\Ameria\Message\RegisterRequest', $options);
     }
@@ -122,23 +125,36 @@ class Gateway extends AbstractGateway
     /**
      * Create GetOrderStatus Request.
      *
-     * @param array $parameters
+     * @param array $options
+     *
      * @return \Omnipay\Common\Message\AbstractRequest
      */
-    public function getOrderStatus(array $parameters = array()): \Omnipay\Common\Message\AbstractRequest
+    public function getOrderStatus(array $options = array()): \Omnipay\Common\Message\AbstractRequest
     {
-        return $this->createRequest('\Omnipay\Ameria\Message\GetOrderStatusRequest', $parameters);
+        return $this->createRequest('\Omnipay\Ameria\Message\GetOrderStatusRequest', $options);
     }
 
     /**
      * Create Refund Request.
      *
-     * @param array $parameters
+     * @param array $options
      *
      * @return \Omnipay\Common\Message\AbstractRequest
      */
-    public function refund(array $parameters = array()): \Omnipay\Common\Message\AbstractRequest
+    public function refund(array $options = array()): \Omnipay\Common\Message\AbstractRequest
     {
-        return $this->createRequest('\Omnipay\Ameria\Message\RefundRequest', $parameters);
+        return $this->createRequest('\Omnipay\Ameria\Message\RefundRequest', $options);
+    }
+
+    /**
+     * Complete purchase request.
+     *
+     * @param array $options
+     *
+     * @return \Omnipay\Common\Message\RequestInterface
+     */
+    public function completePurchase(array $options = array()): RequestInterface
+    {
+        return $this->createRequest('\Omnipay\Ameria\Message\ConfirmPaymentRequest', $options);
     }
 }

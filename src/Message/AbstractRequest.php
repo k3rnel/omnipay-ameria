@@ -4,9 +4,11 @@ namespace Omnipay\Ameria\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use \Omnipay\Common\Message\AbstractRequest as CommonAbstractRequest;
+use Omnipay\Common\Message\ResponseInterface;
 
 /**
  * Class AbstractRequest
+ *
  * @package Omnipay\Ameria\Message
  */
 abstract class AbstractRequest extends CommonAbstractRequest
@@ -39,6 +41,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
      * Set account client id.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setClientId($value)
@@ -58,6 +61,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
      * Set account login.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setUsername($value): AbstractRequest
@@ -79,6 +83,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
      * Set account password.
      *
      * @param $value
+     *
      * @return $this
      */
     public function setPassword($value): AbstractRequest
@@ -140,6 +145,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
 
     /**
      * Get the request binding purchase.
+     *
      * @return bool
      */
     public function getBindingPurchase()
@@ -161,6 +167,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
 
     /**
      * Get the card holder id.
+     *
      * @return mixed
      */
     public function getCardHolderId()
@@ -182,6 +189,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
 
     /**
      * Get the request Opaque(Additional data).
+     *
      * @return mixed
      */
     public function getOpaque()
@@ -203,6 +211,7 @@ abstract class AbstractRequest extends CommonAbstractRequest
 
     /**
      * Get the request paymentId.
+     *
      * @return $this
      */
     public function getPaymentId()
@@ -239,11 +248,12 @@ abstract class AbstractRequest extends CommonAbstractRequest
     }
 
     /**
-     * @param $data
+     * @param       $data
      * @param array $headers
+     *
      * @return Response
      */
-    protected function createResponse($data, $headers = []): Response
+    protected function createResponse($data, array $headers = []): Response
     {
         return $this->response = new Response($this, $data, $headers);
     }

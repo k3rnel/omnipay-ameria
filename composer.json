@@ -26,11 +26,18 @@
         }
     },
     "require": {
+        "php": ">=7.3",
         "omnipay/common": "^3",
         "ext-json": "*",
-        "php": "8.*"
+        "symfony/http-client": "^5.4"
     },
     "require-dev": {
-        "omnipay/tests": "^3"
+        "omnipay/tests": "^3.0|^v4.0.0",
+        "http-interop/http-factory-guzzle": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }
