@@ -1,5 +1,5 @@
 {
-    "name": "gauravjain028/omnipay-ameria",
+    "name": "k3rnel/omnipay-ameria",
     "type": "library",
     "description": "Ameria gateway for Omnipay payment processing library",
     "keywords": [
@@ -12,12 +12,12 @@
         "ameria",
         "purchase"
     ],
-    "homepage": "https://github.com/gauravjain028/omnipay-ameria",
+    "homepage": "https://github.com/k3rnel/omnipay-ameria",
     "license": "MIT",
     "authors": [
         {
-            "name": "Gaurav Jain",
-            "email": "gaurav.jain028@gmail.com"
+            "name": "Poghos Boyajyan",
+            "email": "poghosboyajyan@gmail.com"
         }
     ],
     "autoload": {
@@ -26,7 +26,7 @@
         }
     },
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "omnipay/common": "^3",
         "ext-json": "*",
         "symfony/http-client": "^5.4"
