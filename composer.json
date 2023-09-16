@@ -28,8 +28,7 @@
     "require": {
         "php": ">=7.4",
         "omnipay/common": "^3",
-        "ext-json": "*",
-        "symfony/http-client": "^5.4"
+        "ext-json": "*"
     },
     "require-dev": {
         "omnipay/tests": "^3.0|^v4.0.0",
